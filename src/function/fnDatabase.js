@@ -18,7 +18,7 @@ const saveMatch = (idMatch, dataMatch) => {
         return tx.complete;
     })
     .then(function() {
-        M.toast({html: `Match added to favourites.`})
+        M.toast({html: `Match added to favorites.`})
     })
     .catch(() => {
         M.toast({html: `Failed.`})
@@ -26,7 +26,6 @@ const saveMatch = (idMatch, dataMatch) => {
 }
 
 const deleteMatch = (idMatch) => {
-    console.log(idMatch);
     dbPromised
     .then(function(db) {
         var tx = db.transaction('favmatch', 'readwrite');
@@ -35,7 +34,7 @@ const deleteMatch = (idMatch) => {
         return tx.complete;
     })
     .then(function() {
-        M.toast({html: `Match deleted form favourites.`})
+        M.toast({html: `Match deleted form favorites.`})
     })
     .catch(() => {
         M.toast({html: `Failed.`})

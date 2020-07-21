@@ -66,6 +66,9 @@ class FixturesDateList extends HTMLElement {
                                     const winAway = rest.score.winner === 'AWAY_TEAM' ? 'bold' : ''
                                     const statusMatch = rest.status === 'FINISHED' ? `<div class="row"><div class="col s5 center-align ${winHome}">${scoreHome}</div><div class="col s2 center-align"></div><div class="col s5 center-align ${winAway}">${scoreAway}</div></div>` : ` <div class="row">
                                     <div class="col s12 center-align">${rest.status}</div></div>`
+
+                                    let classFav = 'blue-grey lighten-5 blue-grey-text text-darken-4'
+
                                     matchHtml += `
                                         <div class="col s12 m6">
                                             <div class="card card-content padding-10">
@@ -76,10 +79,7 @@ class FixturesDateList extends HTMLElement {
                                                 </div>
                                                 ${statusMatch}
                                                 <div class="row">
-                                                    <div class="col s6 center-align">
-                                                        <a href="#/match/${rest.id}" class="match-det waves-effect waves-light btn-small blue lighten-1"><i class="material-icons left">info</i>Detail</a>
-                                                    </div>
-                                                    <div class="col s6 center-align">
+                                                    <div class="col s12 center-align">
                                                         <a href="javascript:void(0)" data-idmatch="${rest.id}" class="match-fav waves-effect waves-light btn-small blue-grey lighten-5 blue-grey-text text-darken-4"><i class="material-icons left ">favorite</i>Favorite</a>
                                                     </div>
                                                 </div>
@@ -128,19 +128,6 @@ class FixturesDateList extends HTMLElement {
                                 }
                             })
                         })
-
-                        // Detail Match
-                        document.querySelectorAll(".match-det").forEach(elm => {
-                            elm.addEventListener("click", event => {
-                                const mainPage = document.querySelector('main-page')
-                
-                                const page = elm.getAttribute("href").split('/')[1];
-                                const idMatch = elm.getAttribute("href").split('/')[2];
-                                
-                                mainPage.id = idMatch
-                                mainPage.page = page
-                            })
-                        })
                     })
                 }
             })
@@ -180,10 +167,7 @@ class FixturesDateList extends HTMLElement {
                                     </div>
                                     ${statusMatch}
                                     <div class="row">
-                                        <div class="col s6 center-align">
-                                            <a href="#/match/${rest.id}" class="match-det waves-effect waves-light btn-small blue lighten-1"><i class="material-icons left">info</i>Detail</a>
-                                        </div>
-                                        <div class="col 26 center-align">
+                                        <div class="col s12 center-align">
                                             <a href="javascript:void(0)" data-idmatch="${rest.id}" class="match-fav waves-effect waves-light btn-small blue-grey lighten-5 blue-grey-text text-darken-4"><i class="material-icons left ">favorite</i>Favorite</a>
                                         </div>
                                     </div>
@@ -231,21 +215,7 @@ class FixturesDateList extends HTMLElement {
                         })
                     }
                 })
-            })
-
-            // Detail Match
-            document.querySelectorAll(".match-det").forEach(elm => {
-                elm.addEventListener("click", event => {
-                    const mainPage = document.querySelector('main-page')
-    
-                    const page = elm.getAttribute("href").split('/')[1];
-                    const idMatch = elm.getAttribute("href").split('/')[2];
-                    
-                    mainPage.id = idMatch
-                    mainPage.page = page
-                })
-            })
-            
+            })            
         })
     }
 }

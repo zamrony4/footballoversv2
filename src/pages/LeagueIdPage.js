@@ -1,8 +1,8 @@
 // import Data
 import league from "../data/league.js";
 
-// import component
-import "../component/ClubList.js";
+// import function
+import { loadClub, loadTable } from "../function/fnLeague.js";
 
 class LeagueIdPage extends HTMLElement {
     connectedCallback(){
@@ -32,19 +32,63 @@ class LeagueIdPage extends HTMLElement {
                 </div>
 
                 <ul class="tabs mb-3" id="home-tabs">
-                    <li class="tab col s3"><a href="#test1" class="active data-tabs">Club</a></li>
-                    <li class="tab col s3"><a href="#test2" class="data-tabs">Table</a></li>
-                    <li class="tab col s3"><a href="#test3" class="data-tabs">Fixtures</a></li>
+                    <li class="tab col s3"><a href="#club" class="active data-tabs">Club</a></li>
+                    <li class="tab col s3"><a href="#table" class="data-tabs">Table</a></li>
+                    <li class="tab col s3"><a href="#fixtures" class="data-tabs">Fixtures</a></li>
                 </ul>
+
+                <div id="club" class="col s12">
+                    <div class="center-align">
+                        <div class="preloader-wrapper big active mt-5">
+                            <div class="spinner-layer spinner-green-only">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div><div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div><div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="table" class="col s12">
+                    <div class="center-align">
+                        <div class="preloader-wrapper big active mt-5">
+                            <div class="spinner-layer spinner-green-only">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div><div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div><div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="fixtures" class="col s12">
+                    <div class="center-align">
+                        <div class="preloader-wrapper big active mt-5">
+                            <div class="spinner-layer spinner-green-only">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div><div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div><div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         `;
 
         const tabClass = document.querySelectorAll('.tabs');
         M.Tabs.init(tabClass);
-
-        const listClub = document.createElement('club-list')
-        listClub.idleague = idLeagueTemp
-        this.append(listClub)
+        loadClub(idLeagueTemp)
+        loadTable(idLeagueTemp)
     }
 }
 

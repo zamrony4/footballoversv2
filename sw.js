@@ -17,6 +17,7 @@ const urlsToCache = [
     "/src/pages/FavouritesPage.js",
     "/src/pages/HomePage.js",
     "/src/pages/LeaguePage.js",
+    "/src/pages/LeagueIdPage.js",
     "/src/pages/MainPage.js",
     "/src/pages/NotFoundPage.js",
     "/assets/css/materialize.css",

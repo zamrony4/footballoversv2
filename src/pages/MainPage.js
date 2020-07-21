@@ -2,7 +2,6 @@ import "./NotFoundPage.js";
 import "./LeaguePage.js";
 import "./HomePage.js";
 import "./FavouritesPage.js";
-import "./MatchPage.js";
 import "./LeagueIdPage.js";
 
 class MainPage extends HTMLElement {
@@ -37,9 +36,6 @@ class MainPage extends HTMLElement {
             pageDefault = leagueHome
         } else if (this._page === 'favourites') {
             pageDefault = favouritesHome
-        } else if (this._page === 'match') {
-            matchHome.idmatch = this._id
-            pageDefault = matchHome
         } else if (this._page === 'leagueid') {
             leagueIdHome.idleague = this._id
             pageDefault = leagueIdHome
