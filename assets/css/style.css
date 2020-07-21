@@ -99,3 +99,13 @@
 .bold {
   font-weight: bold;
 }
+
+.fit {
+  height: -moz-fit-content;
+  height: -webkit-fit-content;
+  height: -fit-content;
+}
+
+.w-100 {
+  width: 100%;
+}

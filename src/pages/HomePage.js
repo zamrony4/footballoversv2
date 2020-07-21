@@ -26,6 +26,16 @@ class HomePage extends HTMLElement {
 
         const tabClass = document.querySelectorAll('.tabs');
         M.Tabs.init(tabClass);
+
+        document.querySelectorAll(".data-tabs").forEach(elm => {
+            elm.addEventListener("click", event => {
+                const dateSelect = event.target.getAttribute("data-date");
+                listFixtures.idLeague = 0;
+                listFixtures.dateFrom = dateSelect;
+                listFixtures.dateTo = dateSelect;
+                this.append(listFixtures)
+            })
+        })
     }
 }
 
