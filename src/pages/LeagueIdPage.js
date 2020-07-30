@@ -2,7 +2,8 @@
 import league from "../data/league.js";
 
 // import function
-import { loadClub, loadTable } from "../function/fnLeague.js";
+import { loadClub, loadTable, loadFixtures } from "../function/fnLeague.js";
+import { dateFormat } from "../function/fnDate.js";
 
 class LeagueIdPage extends HTMLElement {
     connectedCallback(){
@@ -14,6 +15,9 @@ class LeagueIdPage extends HTMLElement {
     }
 
     render() {
+        const dateFrom = dateFormat(1, -2);
+        const dateTo = dateFormat(1, 2)
+
         const idLeague = window.location.hash.split('/')[2];
         let idLeagueTemp = this._idleague
 
@@ -89,6 +93,7 @@ class LeagueIdPage extends HTMLElement {
         M.Tabs.init(tabClass);
         loadClub(idLeagueTemp)
         loadTable(idLeagueTemp)
+        loadFixtures(idLeagueTemp, dateFrom, dateTo)
     }
 }
 

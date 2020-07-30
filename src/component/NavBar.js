@@ -19,11 +19,23 @@ class NavBar extends HTMLElement {
         });
 
         this.innerHTML = `
-            <ul class="sidenav" id="nav-mobile">${sideNav}</ul>
+            <ul class="sidenav" id="nav-mobile">
+                <li>
+                    <div class="user-view">
+                        <div class="background">
+                            <img src="../../assets/images/background.jpg">
+                        </div>
+                        <a href="#user"><img class="circle" src="../../assets/images/user.png"></a>
+                        <a href="#name"><span class="white-text name">Muhammad Zamroni</span></a>
+                        <a href="#email"><span class="white-text email">mzamrony4@gmail.com</span></a>
+                    </div>
+                </li>
+                ${sideNav}
+            </ul>
             <div class="navbar-fixed">
                 <nav class="green accent-4">
                     <div class="nav-wrapper container">
-                    <a href="#" class="brand-logo">FOOTBALL</a>
+                    <a href="#" class="brand-logo">Soccer Board</a>
                     <a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a>
                     
                     <ul class="mainnav right hide-on-med-and-down">${mainNav}</ul>

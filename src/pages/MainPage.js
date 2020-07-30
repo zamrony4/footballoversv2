@@ -1,8 +1,9 @@
 import "./NotFoundPage.js";
 import "./LeaguePage.js";
 import "./HomePage.js";
-import "./FavouritesPage.js";
+import "./FavoritesPage.js";
 import "./LeagueIdPage.js";
+import "./ClubPage.js";
 
 class MainPage extends HTMLElement {
     connectedCallback(){
@@ -25,20 +26,23 @@ class MainPage extends HTMLElement {
         const notFoundHome = document.createElement("not-found-page")
         const pageHome = document.createElement("home-page")
         const leagueHome = document.createElement("league-page")
-        const favouritesHome = document.createElement("favourites-page")
-        const matchHome = document.createElement("match-page")
+        const favoritesHome = document.createElement("favorites-page")
         const leagueIdHome = document.createElement("league-id-page")
+        const clubHome = document.createElement("club-page")
 
         let pageDefault = notFoundHome
         if (this._page === 'home') {
             pageDefault = pageHome
         } else if (this._page === 'league') {
             pageDefault = leagueHome
-        } else if (this._page === 'favourites') {
-            pageDefault = favouritesHome
+        } else if (this._page === 'favorites') {
+            pageDefault = favoritesHome
         } else if (this._page === 'leagueid') {
             leagueIdHome.idleague = this._id
             pageDefault = leagueIdHome
+        } else if (this._page === 'club') {
+            clubHome.idclub = this._id
+            pageDefault = clubHome
         } 
         
         this.appendChild(pageDefault)

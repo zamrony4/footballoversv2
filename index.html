@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="description" content="Submission PWA 2"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Football Lovers</title>
+    <title>Soccer Board</title>
 
     <link rel="stylesheet" href="assets/css/materialize.min.css">
     <link rel="stylesheet" href="assets/font/material-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <meta name="theme-color" content="#006600"/>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="favicon.ico">
 </head>
 <body>
     <nav-bar></nav-bar>
@@ -19,5 +21,10 @@
     <script src="assets/js/idb.js"></script>
     <script src="src/register-sw.js"></script>
     <script src="app.js" type="module"></script>
+    <script>
+        window.onhashchange = function() {
+            alert()
+        }
+    </script>
 </body>
 </html>

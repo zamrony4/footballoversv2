@@ -64,36 +64,14 @@
   padding: 10px !important;
 }
 
-.font-5 {
-  font-size: 5vw !important;
+.font-club {
+  font-size: 2vh !important;
 }
 
-.font-6 {
-  font-size: 6vw !important;
-}
-
-.font-7 {
-  font-size: 7vw !important;
-}
-
-.font-8 {
-  font-size: 8vw !important;
-}
-
-.font-9 {
-  font-size: 9vw !important;
-}
-
-.font-10 {
-  font-size: 10vw !important;
-}
-
-.font-15 {
-  font-size: 15vw !important;
-}
-
-.font-20 {
-  font-size: 20vw !important;
+@media only screen and (max-width: 600px) {
+  .font-club {
+    font-size: 3vh !important;
+  }
 }
 
 .bold {

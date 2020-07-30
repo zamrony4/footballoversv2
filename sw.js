@@ -4,6 +4,8 @@ const urlsToCache = [
     "/index.html",
     "/app.js",
     "/sw.js",
+    "/manifest.json",
+    "/favicon.ico",
     "/src/main.js",
     "/src/register-sw.js",
     "/src/component/FixturesDateList.js",
@@ -14,7 +16,8 @@ const urlsToCache = [
     "/src/function/fnDatabase.js",
     "/src/function/fnDate.js",
     "/src/function/fnLeague.js",
-    "/src/pages/FavouritesPage.js",
+    "/src/pages/ClubPage.js",
+    "/src/pages/FavoritesPage.js",
     "/src/pages/HomePage.js",
     "/src/pages/LeaguePage.js",
     "/src/pages/LeagueIdPage.js",
@@ -41,6 +44,11 @@ const urlsToCache = [
     "/assets/images/logo/laliga.png",
     "/assets/images/logo/ligue1.png",
     "/assets/images/logo/seriea.png",
+    "/assets/images/icons/icon-512x512.png",
+    "/assets/images/icons/icon-256x256.png",
+    "/assets/images/icons/icon-152x152.png",
+    "/assets/images/icons/icon-144x144.png",
+    "/assets/images/icons/icon-128x128.png"
 ]
 
 self.addEventListener("install", function(event) {
@@ -85,4 +93,26 @@ self.addEventListener("activate", function(event) {
         );
       })
     );
+});
+
+self.addEventListener('push', function(event) {
+  let body;
+  if (event.data) {
+    body = event.data.text();
+  } else {
+    body = 'Push message no payload';
+  }
+
+  const options = {
+    body: body,
+    icon: '/assets/images/icons/icon-128x128.png',
+    vibrate: [100, 50, 100],
+    data: {
+      dateOfArrival: Date.now(),
+      primaryKey: 1
+    }
+  };
+  event.waitUntil(
+    self.registration.showNotification('Push Notification', options)
+  );
 });

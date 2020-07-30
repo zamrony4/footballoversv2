@@ -13,8 +13,8 @@ const navData = [
     },
     {
         id: 3,
-        name: "Favourites",
-        url: "#/favourites",
+        name: "Favorites",
+        url: "#/favorites",
         icon: 'favorite'
     },
 ]
