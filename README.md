@@ -1,2 +1,2 @@
 # footballoversv2
-Ini adalah Project untuk submission ke 3 Kelas MPWA dari DICODING
+Ini adalah Project untuk submission ke 2 Kelas MPWA dari DICODING
